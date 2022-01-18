@@ -38,7 +38,7 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
     /**
     Returns the default singleton instance.
     */
-    @objc public static let shared = IQKeyboardManager()
+    @objc internal static let shared = IQKeyboardManager()
 
     /**
      Invalid point value.
@@ -309,8 +309,6 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
 
         super.init()
 
-        self.registerAllNotifications()
-
         //Creating gesture for @shouldResignOnTouchOutside. (Enhancement ID: #14)
         resignFirstResponderGesture.isEnabled = shouldResignOnTouchOutside
 
@@ -420,5 +418,4 @@ extension IQKeyboardManager: UIGestureRecognizerDelegate {
 
         return true
     }
-
 }
